@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { QueryProvider } from "@/components/query-provider";
+import { CartProvider } from "@/contexts/CartContext";
+import { Header } from "@/components/Header";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,8 +20,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "Trendy Things - Cool Collectibles & Knick Knacks",
+  description: "Discover a plethora of random knick knacks, Labubus, and other cool collectibles. Your destination for trendy items and viral collectibles.",
+  keywords: "collectibles, labubu, trendy items, knick knacks, toys, figurines, viral collectibles",
+  openGraph: {
+    title: "Trendy Things - Cool Collectibles & Knick Knacks",
+    description: "Discover a plethora of random knick knacks, Labubus, and other cool collectibles.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trendy Things - Cool Collectibles & Knick Knacks",
+    description: "Discover a plethora of random knick knacks, Labubus, and other cool collectibles.",
+  },
 };
 
 export default function RootLayout({
@@ -35,15 +49,20 @@ export default function RootLayout({
         <QueryProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
-            <TooltipProvider>
-              {children}
-              <Toaster />
-              <Sonner />
-            </TooltipProvider>
+            <CartProvider>
+              <TooltipProvider>
+                <Header />
+                <main>
+                  {children}
+                </main>
+                <Toaster />
+                <Sonner />
+              </TooltipProvider>
+            </CartProvider>
           </ThemeProvider>
         </QueryProvider>
       </body>
