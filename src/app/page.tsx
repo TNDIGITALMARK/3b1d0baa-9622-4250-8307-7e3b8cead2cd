@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { HeroSection } from '@/components/HeroSection';
 import { ProductCard } from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
@@ -44,6 +45,25 @@ export default function HomePage() {
             </p>
           </div>
 
+          {/* Lifestyle Banner */}
+          <div className='relative mb-12 rounded-2xl overflow-hidden'>
+            <div className='relative h-48 md:h-64'>
+              <Image
+                src='/generated/collectibles-lifestyle.png'
+                alt='Collector lifestyle showcase - stylish collectibles display'
+                fill
+                className='object-cover object-center'
+              />
+              <div className='absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40' />
+              <div className='absolute inset-0 flex items-center justify-center'>
+                <div className='text-center text-white'>
+                  <h3 className='text-2xl md:text-3xl font-bold mb-2'>Curate Your Collection</h3>
+                  <p className='text-blue-100 text-sm md:text-base'>Join collectors worldwide showcasing their passion</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12'>
             {featuredProducts.map((product, index) => (
               <ProductCard
@@ -73,6 +93,18 @@ export default function HomePage() {
       {/* New Arrivals Section */}
       <section className='py-16 bg-gradient-to-br from-blue-50 via-white to-pink-50'>
         <div className='container mx-auto px-4'>
+          {/* New Arrivals Banner */}
+          <div className='relative mb-12 rounded-3xl overflow-hidden'>
+            <div className='relative h-64 md:h-80'>
+              <Image
+                src='/generated/new-arrivals-banner.png'
+                alt='New Arrivals - Latest trendy collectibles just dropped'
+                fill
+                className='object-cover object-center'
+              />
+            </div>
+          </div>
+
           <div className='text-center mb-12'>
             <Badge className='bg-gradient-to-r from-purple-gradient to-hot-pink text-white px-6 py-2 text-sm font-semibold rounded-full inline-flex items-center gap-2 mb-4'>
               <TrendingUp className='h-4 w-4' />
@@ -129,8 +161,13 @@ export default function HomePage() {
 
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
             <div className='text-center p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-2'>
-              <div className='w-16 h-16 bg-gradient-to-br from-electric-blue to-hot-pink rounded-2xl flex items-center justify-center mx-auto mb-4'>
-                <Award className='h-8 w-8 text-white' />
+              <div className='relative w-20 h-20 mx-auto mb-4 rounded-2xl overflow-hidden'>
+                <Image
+                  src='/generated/authentic-products.png'
+                  alt='Authentic collectible products with certification'
+                  fill
+                  className='object-cover object-center'
+                />
               </div>
               <h3 className='text-xl font-semibold mb-2'>Authentic Products</h3>
               <p className='text-gray-600'>
@@ -139,8 +176,13 @@ export default function HomePage() {
             </div>
 
             <div className='text-center p-6 rounded-2xl bg-gradient-to-br from-pink-50 to-white border border-pink-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-2'>
-              <div className='w-16 h-16 bg-gradient-to-br from-hot-pink to-purple-gradient rounded-2xl flex items-center justify-center mx-auto mb-4'>
-                <ShoppingBag className='h-8 w-8 text-white' />
+              <div className='relative w-20 h-20 mx-auto mb-4 rounded-2xl overflow-hidden'>
+                <Image
+                  src='/generated/fast-shipping.png'
+                  alt='Fast worldwide shipping and delivery'
+                  fill
+                  className='object-cover object-center'
+                />
               </div>
               <h3 className='text-xl font-semibold mb-2'>Fast Shipping</h3>
               <p className='text-gray-600'>
@@ -149,8 +191,13 @@ export default function HomePage() {
             </div>
 
             <div className='text-center p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-white border border-purple-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-2'>
-              <div className='w-16 h-16 bg-gradient-to-br from-purple-gradient to-electric-blue rounded-2xl flex items-center justify-center mx-auto mb-4'>
-                <Sparkles className='h-8 w-8 text-white' />
+              <div className='relative w-20 h-20 mx-auto mb-4 rounded-2xl overflow-hidden'>
+                <Image
+                  src='/generated/exclusive-drops.png'
+                  alt='Exclusive limited edition collectibles'
+                  fill
+                  className='object-cover object-center'
+                />
               </div>
               <h3 className='text-xl font-semibold mb-2'>Exclusive Drops</h3>
               <p className='text-gray-600'>

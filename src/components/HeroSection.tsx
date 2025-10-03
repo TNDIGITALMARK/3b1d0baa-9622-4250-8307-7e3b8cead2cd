@@ -108,9 +108,16 @@ export function HeroSection() {
           {/* Right Content - Hero Image */}
           <div className='relative lg:h-[600px] animate-slide-up' style={{ animationDelay: '0.2s' }}>
             <div className='relative h-full rounded-3xl overflow-hidden bg-gradient-to-br from-electric-blue/10 to-hot-pink/10 backdrop-blur-sm'>
-              {/* Placeholder for hero image - will be replaced with actual product showcase */}
-              <div className='absolute inset-0 flex items-center justify-center'>
-                <div className='w-80 h-80 bg-gradient-to-br from-electric-blue to-hot-pink rounded-full opacity-20 animate-pulse' />
+              {/* Hero Showcase Image */}
+              <div className='absolute inset-0'>
+                <Image
+                  src='/generated/hero-showcase.png'
+                  alt='Trendy collectibles showcase featuring Labubu figures and pop culture items'
+                  fill
+                  className='object-cover object-center'
+                  priority
+                />
+                <div className='absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent' />
               </div>
 
               {/* Featured Product Cards */}
